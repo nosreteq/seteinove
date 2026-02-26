@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>7i9 | High Performance Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-color: #0d1117;
+            --bg-color: #1a1d21;
+            --header-bg: #121518;
             --cyan: #00e5e5;
             --white: #ffffff;
-            --gray: #8b949e;
+            --text-dim: #8b949e;
         }
 
         * {
@@ -23,16 +24,18 @@
         body {
             background-color: var(--bg-color);
             color: var(--white);
-            line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        /* HEADER RESPONSIVO */
+        /* HEADER */
         header {
-            padding: 1.5rem 5%;
+            background-color: var(--header-bg);
+            padding: 1rem 5%;
             display: flex;
             align-items: center;
             justify-content: space-between;
             border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            position: relative;
         }
 
         .header-left {
@@ -42,95 +45,136 @@
         }
 
         .logo-svg {
-            height: 35px;
+            height: 38px;
             width: auto;
         }
 
-        .divider {
+        .v-divider {
             width: 1px;
-            height: 25px;
+            height: 30px;
             background: rgba(255, 255, 255, 0.2);
         }
 
         .tagline {
-            font-size: 0.9rem;
+            font-size: 0.95rem;
             color: var(--white);
-            font-weight: 400;
+            font-weight: 300;
         }
 
-        nav {
+        /* NAV & HAMBURGER */
+        .nav-menu {
             display: flex;
             gap: 1.5rem;
+            align-items: center;
         }
 
-        nav a {
+        .nav-menu a {
             color: var(--cyan);
             text-decoration: none;
             font-size: 0.85rem;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            font-weight: 500;
+            transition: 0.3s;
+        }
+
+        .menu-toggle {
+            display: none;
+            cursor: pointer;
+            background: none;
+            border: 1px solid var(--cyan);
+            border-radius: 4px;
+            padding: 5px;
         }
 
         /* HERO SECTION */
-        .hero {
+        .container {
             padding: 5rem 5%;
-            max-width: 1200px;
+            max-width: 1300px;
             margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 4rem;
         }
 
-        /* O LOGO GIGANTE COM O "i" DE TRÊS PONTOS */
-        .hero-logo {
-            width: 100%;
-            max-width: 400px;
-            margin-bottom: 3rem;
+        .hero-content {
+            flex: 1;
+        }
+
+        .hero-label {
+            color: var(--white);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: block;
         }
 
         h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-            margin-bottom: 1.5rem;
+            font-size: clamp(2rem, 4vw, 3.2rem);
             line-height: 1.1;
+            margin-bottom: 1.5rem;
         }
 
-        p {
-            font-size: 1.1rem;
-            color: var(--gray);
-            max-width: 600px;
-            margin-bottom: 2.5rem;
+        .hero-desc {
+            color: var(--text-dim);
+            font-size: 1rem;
+            max-width: 450px;
+            margin-bottom: 3rem;
         }
 
+        /* LOGO BOX (DIREITA) */
+        .logo-display-box {
+            flex: 1;
+            background: #000;
+            padding: 4rem;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border-radius: 4px;
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+        }
+
+        .logo-large {
+            width: 100%;
+            max-width: 450px;
+        }
+
+        /* CTA GROUP */
         .cta-group {
             display: flex;
             align-items: center;
-            gap: 2rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
             flex-wrap: wrap;
         }
 
-        .btn {
-            background: var(--cyan);
+        .btn-cyan {
+            background-color: var(--cyan);
             color: #000;
-            padding: 0.8rem 2rem;
+            padding: 0.8rem 1.8rem;
             border-radius: 4px;
             text-decoration: none;
             font-weight: 700;
             transition: 0.3s;
         }
 
-        .btn:hover {
-            box-shadow: 0 0 20px rgba(0, 229, 229, 0.4);
-        }
-
-        .email {
+        .email-link {
             color: var(--cyan);
             text-decoration: none;
             font-size: 0.9rem;
+            border-bottom: 1px solid transparent;
         }
 
-        /* MOBILE FIX */
-        @media (max-width: 768px) {
-            header { flex-direction: column; gap: 1rem; text-align: center; }
-            .divider, nav { display: none; } /* Simplificado para mobile */
-            .hero { text-align: left; padding-top: 3rem; }
+        /* RESPONSIVIDADE */
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 3rem;
+            }
+            .hero-desc { margin: 0 auto 3rem auto; }
+            .cta-group { justify-content: center; }
+            .logo-display-box { order: -1; width: 100%; }
+            .nav-menu { display: none; } /* Menu hamburguer entra aqui */
+            .menu-toggle { display: block; }
         }
     </style>
 </head>
@@ -140,34 +184,50 @@
         <div class="header-left">
             <svg class="logo-svg" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
                 <path d="M10 10 H50 L35 40 H25 L38 18 H10 V10Z" fill="#00E5E5"/>
-                
-                <rect x="65" y="10" width="8" height="8" fill="#00E5E5"/> <rect x="65" y="21" width="8" height="8" fill="#FFFFFF"/> <rect x="65" y="32" width="8" height="8" fill="#FFFFFF"/> <path d="M85 10 H120 V30 H95 V34 H120 V42 H85 V22 H110 V18 H85 V10Z" fill="#00E5E5"/>
+                <rect x="65" y="10" width="8" height="8" fill="#00E5E5"/>
+                <rect x="65" y="21" width="8" height="8" fill="#FFFFFF"/>
+                <rect x="65" y="32" width="8" height="8" fill="#FFFFFF"/>
+                <path d="M85 10 H120 V30 H95 V34 H120 V42 H85 V22 H110 V18 H85 V10Z" fill="#00E5E5"/>
             </svg>
-            <div class="divider"></div>
-            <span class="tagline">Sistemas de Alta Performance</span>
+            <div class="v-divider"></div>
+            <span class="tagline">High Performance Systems</span>
         </div>
-        <nav>
-            <a href="#">Serviços</a>
-            <a href="#">Sobre</a>
-            <a href="#">Contato</a>
+
+        <nav class="nav-menu">
+            <a href="#">Services</a>
+            <a href="#">About Us</a>
+            <a href="#">Contact</a>
         </nav>
+
+        <button class="menu-toggle">
+            <svg width="25" height="25" viewBox="0 0 24 24" fill="none" stroke="#00e5e5" stroke-width="2">
+                <line x1="3" y1="12" x2="21" y2="12"></line>
+                <line x1="3" y1="6" x2="21" y2="6"></line>
+                <line x1="3" y1="18" x2="21" y2="18"></line>
+            </svg>
+        </button>
     </header>
 
-    <main class="hero">
-        <svg class="hero-logo" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
-            <path d="M10 10 H50 L35 40 H25 L38 18 H10 V10Z" fill="#00E5E5"/>
-            <rect x="65" y="10" width="8" height="8" fill="#00E5E5"/>
-            <rect x="65" y="21" width="8" height="8" fill="#FFFFFF"/>
-            <rect x="65" y="32" width="8" height="8" fill="#FFFFFF"/>
-            <path d="M85 10 H120 V30 H95 V34 H120 V42 H85 V22 H110 V18 H85 V10Z" fill="#00E5E5"/>
-        </svg>
+    <main class="container">
+        <section class="hero-content">
+            <span class="hero-label">Hero</span>
+            <h1>Engineering the Next Level of Software.</h1>
+            <p class="hero-desc">Desenvolvimento especializado em sistemas escaláveis, integrações de APIs financeiras e performance extrema.</p>
+            
+            <div class="cta-group">
+                <a href="#" class="btn-cyan">Solicitar Projeto</a>
+                <a href="mailto:contato@seteinove.com" class="email-link">contato@seteinove.com</a>
+            </div>
+        </section>
 
-        <h1>Engineering the<br>Next Level of Software.</h1>
-        <p>Desenvolvimento especializado em sistemas escaláveis, integrações de APIs financeiras e performance extrema.</p>
-
-        <div class="cta-group">
-            <a href="mailto:contato@seteinove.com" class="btn">Solicitar Projeto</a>
-            <a href="mailto:contato@seteinove.com" class="email">contato@seteinove.com</a>
+        <div class="logo-display-box">
+            <svg class="logo-large" viewBox="0 0 160 50" xmlns="http://www.w3.org/2000/svg">
+                <path d="M10 10 H50 L35 40 H25 L38 18 H10 V10Z" fill="#00E5E5"/>
+                <rect x="65" y="10" width="8" height="8" fill="#00E5E5"/>
+                <rect x="65" y="21" width="8" height="8" fill="#FFFFFF"/>
+                <rect x="65" y="32" width="8" height="8" fill="#FFFFFF"/>
+                <path d="M85 10 H120 V30 H95 V34 H120 V42 H85 V22 H110 V18 H85 V10Z" fill="#00E5E5"/>
+            </svg>
         </div>
     </main>
 
