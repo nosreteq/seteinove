@@ -3,15 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>7i9 | High Performance Systems</title>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Zen+Dots&display=swap" rel="stylesheet">
+    <title>7i9 | IT & Automation</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&family=Zen+Dots&display=swap" rel="stylesheet">
     <style>
         :root {
             --bg-color: #0f1115;
             --header-bg: #161a1f;
+            --section-bg: #111419;
             --cyan: #00e5e5;
+            --cyan-glow: rgba(0, 229, 229, 0.4);
             --white: #ffffff;
             --text-gray: #949ba4;
+            --border-color: rgba(255, 255, 255, 0.05);
         }
 
         * {
@@ -28,20 +31,23 @@
             font-family: 'Inter', sans-serif;
         }
 
-        /* --- CABEÇALHO --- */
+        /* --- CABEÇALHO & NAVEGAÇÃO --- */
         header {
             background-color: var(--header-bg);
-            padding: 1.2rem 6%;
+            padding: 0 6%;
+            height: 90px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+            border-bottom: 1px solid var(--border-color);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
         }
 
         .header-left {
             display: flex;
             align-items: center;
-            gap: 1.5rem;
         }
 
         .logo-svg {
@@ -50,22 +56,50 @@
             display: block;
         }
 
-        .vertical-line {
-            width: 1px;
-            height: 32px;
-            background: rgba(255, 255, 255, 0.15);
-        }
-
-        .tagline {
-            font-size: 0.95rem;
-            color: var(--white);
-            letter-spacing: 0.5px;
-        }
-
-        /* --- MENU HAMBÚRGUER --- */
-        .hamburger-menu {
-            cursor: pointer;
+        /* Menu Desktop Estilo TESIS */
+        .desktop-nav ul {
             display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .desktop-nav a {
+            color: var(--text-gray);
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 35px 0; /* Estica a área de clique até a altura do header */
+            position: relative;
+            transition: color 0.3s ease;
+        }
+
+        .desktop-nav a:hover {
+            color: var(--cyan);
+        }
+
+        /* Efeito de borda ciano ao passar o mouse */
+        .desktop-nav a::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background-color: var(--cyan);
+            transition: width 0.3s ease;
+            box-shadow: 0 -2px 10px var(--cyan-glow);
+        }
+
+        .desktop-nav a:hover::after {
+            width: 100%;
+        }
+
+        /* --- MENU HAMBÚRGUER (Oculto no Desktop) --- */
+        .hamburger-menu {
+            display: none;
+            cursor: pointer;
             flex-direction: column;
             gap: 6px;
         }
@@ -80,7 +114,7 @@
 
         /* --- SEÇÃO PRINCIPAL (HERO) --- */
         .hero-section {
-            padding: 5rem 6%;
+            padding: 6rem 6%;
             display: flex;
             align-items: center;
             justify-content: space-between;
@@ -96,9 +130,12 @@
 
         .hero-label {
             font-weight: 700;
-            color: var(--white);
+            color: var(--cyan);
+            text-transform: uppercase;
+            letter-spacing: 2px;
             margin-bottom: 1rem;
-            display: block;
+            display: inline-block;
+            font-size: 0.85rem;
         }
 
         h1 {
@@ -110,7 +147,7 @@
         .hero-description {
             color: var(--text-gray);
             font-size: 1.15rem;
-            max-width: 500px;
+            max-width: 550px;
             margin-bottom: 3rem;
         }
 
@@ -125,6 +162,17 @@
             border-radius: 6px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
             min-width: 300px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        /* Detalhe Cyberpunk sutil na caixa */
+        .logo-box-right::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; width: 100%; height: 2px;
+            background: linear-gradient(90deg, transparent, var(--cyan), transparent);
+            opacity: 0.5;
         }
 
         .logo-large {
@@ -133,7 +181,7 @@
             height: auto;
         }
 
-        /* --- BOTÃO --- */
+        /* --- BOTÃO CIANO --- */
         .btn-cyan {
             background-color: var(--cyan);
             color: #000;
@@ -143,6 +191,9 @@
             border-radius: 4px;
             display: inline-block;
             transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-size: 0.9rem;
         }
 
         .btn-cyan:hover {
@@ -150,19 +201,109 @@
             box-shadow: 0 10px 25px rgba(0, 229, 229, 0.3);
         }
 
-        /* --- RESPONSIVO --- */
+        /* --- SEÇÃO DE SERVIÇOS (Baseado na TESIS) --- */
+        .services-section {
+            background-color: var(--section-bg);
+            padding: 6rem 6%;
+            border-top: 1px solid var(--border-color);
+        }
+
+        .section-header {
+            max-width: 1400px;
+            margin: 0 auto 4rem auto;
+            text-align: center;
+        }
+
+        .section-header h2 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .section-header p {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .service-card {
+            background-color: var(--header-bg);
+            border: 1px solid var(--border-color);
+            padding: 3rem 2rem;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .service-card:hover {
+            border-color: var(--cyan);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 229, 229, 0.05);
+        }
+
+        .service-icon {
+            font-family: 'Zen Dots', cursive;
+            font-size: 2.5rem;
+            color: var(--cyan);
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            color: var(--white);
+        }
+
+        .service-card p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+            margin-bottom: 2rem;
+        }
+
+        .service-link {
+            color: var(--cyan);
+            text-decoration: none;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .service-link:hover {
+            text-shadow: 0 0 8px var(--cyan-glow);
+        }
+
+        /* --- RESPONSIVIDADE --- */
+        @media (max-width: 1024px) {
+            .desktop-nav {
+                display: none; /* Esconde o menu extenso no mobile */
+            }
+            .hamburger-menu {
+                display: flex; /* Mostra o hambúrguer no mobile */
+            }
+        }
+
         @media (max-width: 968px) {
             .hero-section {
                 flex-direction: column;
                 text-align: left;
+                padding: 4rem 6%;
             }
             .logo-box-right {
                 order: -1;
                 width: 100%;
                 padding: 3rem 1rem;
-            }
-            .vertical-line, .tagline {
-                display: none;
             }
         }
     </style>
@@ -172,7 +313,6 @@
     <header>
         <div class="header-left">
             <svg class="logo-svg" viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg">
-                
                 <text x="48" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
                 
                 <rect x="76" y="15" width="8" height="8" fill="#00E5E5"/> 
@@ -180,12 +320,19 @@
                 <rect x="76" y="38" width="8" height="8" fill="#FFFFFF"/> 
                 
                 <text x="113" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
-                
             </svg>
-            
-            <div class="vertical-line"></div>
-            <span class="tagline">High Performance Systems</span>
         </div>
+
+        <nav class="desktop-nav">
+            <ul>
+                <li><a href="#visao">Visão Artificial</a></li>
+                <li><a href="#robotica">Robótica</a></li>
+                <li><a href="#automacao">Automação</a></li>
+                <li><a href="#consultoria">Consultoria IT</a></li>
+                <li><a href="#outsourcing">Outsourcing</a></li>
+                <li><a href="#empresa">A Empresa</a></li>
+            </ul>
+        </nav>
 
         <div class="hamburger-menu">
             <span></span>
@@ -196,16 +343,15 @@
 
     <main class="hero-section">
         <section class="hero-content">
-            <span class="hero-label">Hero</span>
-            <h1>Engineering the<br>Next Level of Software.</h1>
-            <p class="hero-description">Especialistas em desenvolvimento de sistemas de alta performance e arquiteturas escaláveis.</p>
+            <span class="hero-label">IT & Automation™</span>
+            <h1>Soluções Globais em<br>Automação e TI.</h1>
+            <p class="hero-description">Uma empresa dedicada a fornecer serviços profissionais de tecnologia, engenharia de software e integração de sistemas em escala global, otimizando recursos e aumentando a competitividade do seu negócio.</p>
             
-            <a href="mailto:contato@seteinove.com" class="btn-cyan">Solicitar Projeto</a>
+            <a href="#contato" class="btn-cyan">Conheça nossos Projetos</a>
         </section>
 
         <div class="logo-box-right">
             <svg class="logo-large" viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg">
-                
                 <text x="48" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
                 
                 <rect x="76" y="15" width="8" height="8" fill="#00E5E5"/>
@@ -213,10 +359,45 @@
                 <rect x="76" y="38" width="8" height="8" fill="#FFFFFF"/>
                 
                 <text x="113" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
-                
             </svg>
         </div>
     </main>
+
+    <section class="services-section">
+        <div class="section-header">
+            <h2>Nossas Especialidades</h2>
+            <p>Implementação de soluções personalizadas que cobrem todo o ciclo de vida tecnológico da sua empresa.</p>
+        </div>
+
+        <div class="services-grid">
+            <div class="service-card">
+                <span class="service-icon">A</span> <h3>Automação & Controle</h3>
+                <p>Projetos Chave na Mão, sistemas de visão artificial e integração de robótica colaborativa para otimização da linha de produção.</p>
+                <a href="#" class="service-link">Saber Mais →</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">I</span>
+                <h3>Consultoria IT</h3>
+                <p>Transferência de know-how, metodologias ágeis de trabalho e estratégias de desenvolvimento para a evolução digital do seu modelo de negócio.</p>
+                <a href="#" class="service-link">Saber Mais →</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">S</span>
+                <h3>Software Factory</h3>
+                <p>Aplicativos em tempo real, sistemas de informação gerencial e desenvolvimento sob medida para os desafios mais complexos da Indústria 4.0.</p>
+                <a href="#" class="service-link">Saber Mais →</a>
+            </div>
+
+            <div class="service-card">
+                <span class="service-icon">O</span>
+                <h3>Outsourcing Global</h3>
+                <p>Terceirização de profissionais especializados em TI e automação, prontos para alavancar a capacidade produtiva da sua equipe.</p>
+                <a href="#" class="service-link">Saber Mais →</a>
+            </div>
+        </div>
+    </section>
 
 </body>
 </html>
