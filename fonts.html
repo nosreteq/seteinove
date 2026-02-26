@@ -2,8 +2,8 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>Laboratório de Fontes - 7i9</title>
-    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Fira+Code:wght@500&family=Inconsolata:wght@600&family=Inter:wght@700&family=JetBrains+Mono:wght@700&family=Lato:wght@700&family=Lora:ital,wght@1,600&family=Merriweather:wght@700&family=Montserrat:wght@700&family=Nunito:wght@700&family=Open+Sans:wght@700&family=Orbitron:wght@700&family=Oswald:wght@700&family=Playfair+Display:wght@700&family=Poppins:wght@700&family=Rajdhani:wght@700&family=Raleway:wght@700&family=Roboto:wght@700&family=Space+Grotesk:wght@700&family=Space+Mono:wght@700&family=Syncopate:wght@700&family=Ubuntu:wght@700&display=swap" rel="stylesheet">
+    <title>7i9 | Cyberpunk Font Lab</title>
+    <link href="https://fonts.googleapis.com/css2?family=Audiowide&family=Black+Ops+One&family=Bruno+Ace&family=Chakra+Petch:wght@700&family=Exo+2:wght@700&family=Jura:wght@700&family=Michroma&family=Orbitron:wght@700&family=Oxanium:wght@700&family=Quantico:wght@700&family=Rajdhani:wght@700&family=Russo+One&family=Saira+Stencil+One&family=Space+Grotesk:wght@700&family=Syncopate:wght@700&family=Teko:wght@700&family=Tomorrow:wght@700&family=Turret+Road:wght@800&family=Wallpoet&family=Zen+Dots&display=swap" rel="stylesheet">
     
     <style>
         :root {
@@ -17,165 +17,251 @@
         body {
             background-color: var(--bg);
             color: var(--text-white);
-            font-family: sans-serif;
+            font-family: 'Space Grotesk', sans-serif;
             margin: 0;
-            padding: 2rem 5%;
+            padding: 3rem 5%;
         }
 
         h1 {
             text-align: center;
             margin-bottom: 10px;
             font-size: 2.5rem;
+            color: var(--white);
         }
 
         p.subtitle {
             text-align: center;
             color: var(--text-gray);
-            margin-bottom: 3rem;
-        }
-
-        .category-title {
-            font-size: 1.5rem;
-            border-bottom: 1px solid rgba(255,255,255,0.1);
-            padding-bottom: 10px;
-            margin: 3rem 0 1.5rem 0;
-            color: var(--text-gray);
-            text-transform: uppercase;
-            letter-spacing: 2px;
+            margin-bottom: 4rem;
+            font-size: 1.1rem;
         }
 
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-            gap: 1.5rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
         }
 
         .font-card {
             background-color: var(--card-bg);
             border: 1px solid rgba(0, 229, 229, 0.1);
-            border-radius: 6px;
-            padding: 2rem 1rem;
+            border-radius: 8px;
+            padding: 2.5rem 1.5rem;
             text-align: center;
-            transition: 0.3s;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, border-color 0.3s ease;
         }
 
         .font-card:hover {
             border-color: var(--cyan);
-            box-shadow: 0 10px 20px rgba(0, 229, 229, 0.1);
-            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(0, 229, 229, 0.15);
+            transform: translateY(-5px);
         }
 
         .font-name {
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             color: var(--text-gray);
             text-transform: uppercase;
-            letter-spacing: 1px;
-            margin-bottom: 1rem;
+            letter-spacing: 2px;
+            margin-bottom: 2rem;
         }
 
-        .font-preview {
-            font-size: 4rem;
-            color: var(--cyan);
+        .logo-preview {
+            height: 55px;
+            width: 100%;
+            display: block;
         }
-
-        /* --- FAMÍLIAS DE FONTES --- */
-        /* Web Safe (Já existem no PC) */
-        .f-arial { font-family: Arial, sans-serif; font-weight: bold; }
-        .f-helvetica { font-family: Helvetica, sans-serif; font-weight: bold; }
-        .f-verdana { font-family: Verdana, sans-serif; font-weight: bold; }
-        .f-tahoma { font-family: Tahoma, sans-serif; font-weight: bold; }
-        .f-trebuchet { font-family: 'Trebuchet MS', sans-serif; font-weight: bold; }
-        .f-georgia { font-family: Georgia, serif; font-weight: bold; }
-        .f-times { font-family: 'Times New Roman', serif; font-weight: bold; }
-        .f-courier { font-family: 'Courier New', monospace; font-weight: bold; }
-        .f-impact { font-family: Impact, sans-serif; }
-
-        /* Google Fonts: Sans-Serif (Modernas/Startups) */
-        .f-roboto { font-family: 'Roboto', sans-serif; }
-        .f-opensans { font-family: 'Open Sans', sans-serif; }
-        .f-lato { font-family: 'Lato', sans-serif; }
-        .f-montserrat { font-family: 'Montserrat', sans-serif; }
-        .f-poppins { font-family: 'Poppins', sans-serif; }
-        .f-inter { font-family: 'Inter', sans-serif; }
-        .f-oswald { font-family: 'Oswald', sans-serif; }
-        .f-raleway { font-family: 'Raleway', sans-serif; }
-        .f-ubuntu { font-family: 'Ubuntu', sans-serif; }
-        .f-nunito { font-family: 'Nunito', sans-serif; }
-
-        /* Google Fonts: Serif (Elegantes) */
-        .f-playfair { font-family: 'Playfair Display', serif; }
-        .f-merriweather { font-family: 'Merriweather', serif; }
-        .f-lora { font-family: 'Lora', serif; }
-
-        /* Google Fonts: Monospace (Programação/Código) */
-        .f-firacode { font-family: 'Fira Code', monospace; }
-        .f-jetbrains { font-family: 'JetBrains Mono', monospace; }
-        .f-inconsolata { font-family: 'Inconsolata', monospace; }
-        .f-spacemono { font-family: 'Space Mono', monospace; }
-
-        /* Google Fonts: Tech & Sci-Fi (Cyberpunk) */
-        .f-spacegrotesk { font-family: 'Space Grotesk', sans-serif; }
-        .f-orbitron { font-family: 'Orbitron', sans-serif; }
-        .f-audiowide { font-family: 'Audiowide', cursive; }
-        .f-rajdhani { font-family: 'Rajdhani', sans-serif; }
-        .f-syncopate { font-family: 'Syncopate', sans-serif; }
 
     </style>
 </head>
 <body>
 
-    <h1>Laboratório Tipográfico 7i9</h1>
-    <p class="subtitle">Teste de renderização do logo em dezenas de famílias tipográficas.</p>
+    <h1>7i9 | Tech & Sci-Fi Lab</h1>
+    <p class="subtitle">O "i" em blocos está fixo. Compare o comportamento do 7 e do 9 nestas 20 fontes futuristas.</p>
 
-    <div class="category-title">Tech & Sci-Fi (Vibe Cyberpunk)</div>
     <div class="grid">
-        <div class="font-card"><div class="font-name">Space Grotesk</div><div class="font-preview f-spacegrotesk">7i9</div></div>
-        <div class="font-card"><div class="font-name">Orbitron</div><div class="font-preview f-orbitron">7i9</div></div>
-        <div class="font-card"><div class="font-name">Audiowide</div><div class="font-preview f-audiowide">7i9</div></div>
-        <div class="font-card"><div class="font-name">Rajdhani</div><div class="font-preview f-rajdhani">7i9</div></div>
-        <div class="font-card"><div class="font-name">Syncopate</div><div class="font-preview f-syncopate">7i9</div></div>
-    </div>
+        
+        <div class="font-card">
+            <div class="font-name">Orbitron</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Orbitron', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Orbitron', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
 
-    <div class="category-title">Monospace (Terminal / Código)</div>
-    <div class="grid">
-        <div class="font-card"><div class="font-name">Fira Code</div><div class="font-preview f-firacode">7i9</div></div>
-        <div class="font-card"><div class="font-name">JetBrains Mono</div><div class="font-preview f-jetbrains">7i9</div></div>
-        <div class="font-card"><div class="font-name">Space Mono</div><div class="font-preview f-spacemono">7i9</div></div>
-        <div class="font-card"><div class="font-name">Inconsolata</div><div class="font-preview f-inconsolata">7i9</div></div>
-        <div class="font-card"><div class="font-name">Courier New</div><div class="font-preview f-courier">7i9</div></div>
-    </div>
+        <div class="font-card">
+            <div class="font-name">Syncopate</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Syncopate', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Syncopate', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
 
-    <div class="category-title">Sans-Serif (Startups Modernas)</div>
-    <div class="grid">
-        <div class="font-card"><div class="font-name">Inter (Atual)</div><div class="font-preview f-inter">7i9</div></div>
-        <div class="font-card"><div class="font-name">Montserrat</div><div class="font-preview f-montserrat">7i9</div></div>
-        <div class="font-card"><div class="font-name">Poppins</div><div class="font-preview f-poppins">7i9</div></div>
-        <div class="font-card"><div class="font-name">Roboto</div><div class="font-preview f-roboto">7i9</div></div>
-        <div class="font-card"><div class="font-name">Open Sans</div><div class="font-preview f-opensans">7i9</div></div>
-        <div class="font-card"><div class="font-name">Lato</div><div class="font-preview f-lato">7i9</div></div>
-        <div class="font-card"><div class="font-name">Oswald</div><div class="font-preview f-oswald">7i9</div></div>
-        <div class="font-card"><div class="font-name">Raleway</div><div class="font-preview f-raleway">7i9</div></div>
-        <div class="font-card"><div class="font-name">Ubuntu</div><div class="font-preview f-ubuntu">7i9</div></div>
-        <div class="font-card"><div class="font-name">Nunito</div><div class="font-preview f-nunito">7i9</div></div>
-    </div>
+        <div class="font-card">
+            <div class="font-name">Audiowide</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Audiowide', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Audiowide', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
 
-    <div class="category-title">Clássicas (Web Safe Padrão)</div>
-    <div class="grid">
-        <div class="font-card"><div class="font-name">Impact</div><div class="font-preview f-impact">7i9</div></div>
-        <div class="font-card"><div class="font-name">Arial</div><div class="font-preview f-arial">7i9</div></div>
-        <div class="font-card"><div class="font-name">Helvetica</div><div class="font-preview f-helvetica">7i9</div></div>
-        <div class="font-card"><div class="font-name">Verdana</div><div class="font-preview f-verdana">7i9</div></div>
-        <div class="font-card"><div class="font-name">Tahoma</div><div class="font-preview f-tahoma">7i9</div></div>
-        <div class="font-card"><div class="font-name">Trebuchet MS</div><div class="font-preview f-trebuchet">7i9</div></div>
-    </div>
+        <div class="font-card">
+            <div class="font-name">Space Grotesk</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Space Grotesk', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Space Grotesk', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
 
-    <div class="category-title">Serifadas (Elegantes / Editoriais)</div>
-    <div class="grid">
-        <div class="font-card"><div class="font-name">Playfair Display</div><div class="font-preview f-playfair">7i9</div></div>
-        <div class="font-card"><div class="font-name">Merriweather</div><div class="font-preview f-merriweather">7i9</div></div>
-        <div class="font-card"><div class="font-name">Lora</div><div class="font-preview f-lora">7i9</div></div>
-        <div class="font-card"><div class="font-name">Georgia</div><div class="font-preview f-georgia">7i9</div></div>
-        <div class="font-card"><div class="font-name">Times New Roman</div><div class="font-preview f-times">7i9</div></div>
+        <div class="font-card">
+            <div class="font-name">Chakra Petch</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Chakra Petch', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Chakra Petch', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Michroma</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Michroma', sans-serif" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Michroma', sans-serif" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Zen Dots</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Zen Dots', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Zen Dots', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Rajdhani</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Rajdhani', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Rajdhani', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Quantico</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Quantico', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Quantico', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Black Ops One</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Black Ops One', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Black Ops One', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Russo One</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Russo One', sans-serif" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Russo One', sans-serif" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Exo 2</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Exo 2', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Exo 2', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Tomorrow</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Tomorrow', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Tomorrow', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Oxanium</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Oxanium', cursive" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Oxanium', cursive" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Saira Stencil</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Saira Stencil One', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Saira Stencil One', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Jura</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Jura', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Jura', sans-serif" font-size="44" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Turret Road</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Turret Road', cursive" font-size="44" font-weight="800" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Turret Road', cursive" font-size="44" font-weight="800" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Wallpoet</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Wallpoet', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Wallpoet', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Bruno Ace</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="46" font-family="'Bruno Ace', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="46" font-family="'Bruno Ace', cursive" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
+        <div class="font-card">
+            <div class="font-name">Teko</div>
+            <svg viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg" class="logo-preview">
+                <text x="35" y="50" font-family="'Teko', sans-serif" font-size="54" font-weight="700" fill="#00E5E5" text-anchor="middle">7</text>
+                <rect x="75" y="10" width="10" height="10" fill="#00E5E5"/><rect x="75" y="24" width="10" height="10" fill="#FFFFFF"/><rect x="75" y="38" width="10" height="10" fill="#FFFFFF"/>
+                <text x="125" y="50" font-family="'Teko', sans-serif" font-size="54" font-weight="700" fill="#00E5E5" text-anchor="middle">9</text>
+            </svg>
+        </div>
+
     </div>
 
 </body>
