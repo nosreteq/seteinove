@@ -2,10 +2,173 @@
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
-    <title>7i9</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7i9 | Desenvolvimento de Sistemas</title>
+    <style>
+        /* Reset e Fontes */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #0a0a0b;
+            color: #ffffff;
+            line-height: 1.6;
+        }
+
+        /* Header e Navegação */
+        header {
+            background: rgba(10, 10, 11, 0.95);
+            padding: 1.5rem 10%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            border-bottom: 1px solid #1f1f23;
+        }
+
+        .logo {
+            font-size: 1.8rem;
+            font-weight: bold;
+            color: #00d4ff;
+            letter-spacing: 2px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            margin-left: 2rem;
+            font-size: 0.9rem;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #00d4ff;
+        }
+
+        /* Seção Hero */
+        .hero {
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 0 10%;
+            background: radial-gradient(circle at center, #1a1a2e 0%, #0a0a0b 100%);
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, #fff, #00d4ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: #888;
+            max-width: 600px;
+            margin-bottom: 2rem;
+        }
+
+        .btn {
+            background: #00d4ff;
+            color: #0a0a0b;
+            padding: 0.8rem 2.5rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        .btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 20px rgba(0, 212, 255, 0.3);
+        }
+
+        /* Seção Serviços */
+        .services {
+            padding: 5rem 10%;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .card {
+            background: #16161a;
+            padding: 2.5rem;
+            border-radius: 10px;
+            border: 1px solid #1f1f23;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: #00d4ff;
+        }
+
+        .card h3 {
+            margin-bottom: 1rem;
+            color: #00d4ff;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2.5rem; }
+            nav { display: none; } /* Simplificação para mobile */
+            .services { grid-template-columns: 1fr; }
+        }
+
+        footer {
+            text-align: center;
+            padding: 3rem;
+            color: #444;
+            font-size: 0.8rem;
+            border-top: 1px solid #1f1f23;
+        }
+    </style>
 </head>
 <body>
-    <h1>7i9</h1>
-    <p>seteinove.com</p>
+
+    <header>
+        <div class="logo">7i9</div>
+        <nav>
+            <a href="#servicos">Serviços</a>
+            <a href="#sobre">Sobre</a>
+            <a href="#contato">Contato</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <h1>Sistemas Inteligentes para o Futuro.</h1>
+        <p>Na 7i9, transformamos ideias complexas em soluções de software escaláveis e eficientes.</p>
+        <a href="mailto:contato@seteinove.com" class="btn">Solicitar Orçamento</a>
+    </section>
+
+    <section id="servicos" class="services">
+        <div class="card">
+            <h3>Desenvolvimento Web</h3>
+            <p>Plataformas robustas e interfaces intuitivas focadas na experiência do usuário.</p>
+        </div>
+        <div class="card">
+            <h3>Apps Mobile</h3>
+            <p>Soluções nativas e híbridas para iOS e Android com alta performance.</p>
+        </div>
+        <div class="card">
+            <h3>APIs e Integrações</h3>
+            <p>Conectamos seus sistemas com segurança e agilidade (incluindo dados financeiros e cripto).</p>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2026 7i9 Desenvolvimento de Sistemas. Todos os direitos reservados.
+    </footer>
+
 </body>
 </html>
