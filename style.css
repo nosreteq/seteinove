@@ -39,7 +39,18 @@
 
         .header-left {
             display: flex;
-            align-items: center;
+            flex-direction: column;
+            align-items: flex-start;
+            justify-content: center;
+            gap: 3px;
+        }
+
+        .logo-tagline {
+            font-size: 0.6rem;
+            font-weight: 500;
+            color: var(--text-gray);
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
         }
 
         .logo-svg {
@@ -149,13 +160,20 @@
             background-color: #000000;
             padding: 5rem 2rem;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
+            gap: 1.2rem;
             border-radius: 6px;
             box-shadow: 0 30px 60px rgba(0, 0, 0, 0.5);
             min-width: 300px;
             position: relative;
             overflow: hidden;
+        }
+
+        .logo-box-right .logo-tagline {
+            letter-spacing: 0.25em;
+            color: rgba(255, 255, 255, 0.25);
         }
 
         /* Detalhe Cyberpunk sutil na caixa */
@@ -390,6 +408,7 @@
             color: rgba(255, 255, 255, 0.2);
             font-size: 0.75rem;
             letter-spacing: 0.05em;
+            text-align: center;
             margin: 0;
         }
 
