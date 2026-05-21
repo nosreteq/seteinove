@@ -1,5 +1,5 @@
 document.getElementById('current-year').textContent = new Date().getFullYear();
-
+/*
 (function () {
     const DURATION = 1800; // ms — mesmo tempo dos rects
     const CHARS    = '0123456789';
@@ -71,3 +71,5 @@ document.getElementById('current-year').textContent = new Date().getFullYear();
     rain(digit7, 26, 68, 4);
     rain(digit9, 93, 135, 4);
 })();
+
+*/
