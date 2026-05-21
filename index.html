@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -63,7 +64,7 @@
                     </filter>
                 </defs>
 
-                <text x="48" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <text id="slot-7" x="48" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
 
                 <rect x="76" y="15" width="8" height="8" fill="#00E5E5">
                     <animateTransform attributeName="transform" type="rotate"
@@ -84,25 +85,7 @@
                         dur="1.8s" begin="0s" repeatCount="1" fill="freeze"/>
                 </rect>
 
-                <text x="113" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
-
-                <!-- ponto no 7: barra horizontal + diagonal -->
-                <circle r="3" fill="white" filter="url(#dot-glow)" opacity="0">
-                    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.92;1"
-                        dur="1.3s" begin="0s" repeatCount="1" fill="freeze"/>
-                    <animateMotion dur="1.3s" begin="0s" repeatCount="1" fill="freeze"
-                        path="M 26,15 L 66,15 L 32,46"
-                        calcMode="spline" keyTimes="0;0.4;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
-                </circle>
-
-                <!-- ponto no 9: arco CCW (loop fechado) + cauda -->
-                <circle r="3" fill="white" filter="url(#dot-glow)" opacity="0">
-                    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.06;0.92;1"
-                        dur="1.5s" begin="0.3s" repeatCount="1" fill="freeze"/>
-                    <animateMotion dur="1.5s" begin="0.3s" repeatCount="1" fill="freeze"
-                        path="M 113,14 A 11,11 0 1 0 124,25 L 124,46"
-                        calcMode="spline" keyTimes="0;0.65;1" keySplines="0.4 0 0.6 1;0.4 0 0.6 1"/>
-                </circle>
+                <text id="slot-9" x="113" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
             </svg>
             <p class="logo-tagline">IT &amp; Automation</p>
         </div>
