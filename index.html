@@ -53,17 +53,7 @@
 
         <div class="logo-box-right">
             <svg class="logo-large" viewBox="0 0 160 55" xmlns="http://www.w3.org/2000/svg">
-                <defs>
-                    <filter id="star-glow" x="-120%" y="-120%" width="340%" height="340%">
-                        <feGaussianBlur in="SourceGraphic" stdDeviation="1.2" result="blur"/>
-                        <feMerge>
-                            <feMergeNode in="blur"/>
-                            <feMergeNode in="SourceGraphic"/>
-                        </feMerge>
-                    </filter>
-                </defs>
-
-                <text id="slot-7" x="48" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
+                <text x="48" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">7</text>
 
                 <rect x="76" y="15" width="8" height="8" fill="#00E5E5">
                     <animateTransform attributeName="transform" type="rotate"
@@ -84,33 +74,7 @@
                         dur="1.8s" begin="0s" repeatCount="1" fill="freeze"/>
                 </rect>
 
-                <text id="slot-9" x="113" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
-
-                <!-- estrela 4 pontas percorrendo o 7 -->
-                <path d="M 0,-4 L 0.65,-0.65 L 4,0 L 0.65,0.65 L 0,4 L -0.65,0.65 L -4,0 L -0.65,-0.65 Z"
-                      fill="white" filter="url(#star-glow)" opacity="0">
-                    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.04;0.94;1"
-                        dur="1.8s" begin="0s" repeatCount="1" fill="freeze"/>
-                    <animateTransform attributeName="transform" type="rotate"
-                        from="0" to="360"
-                        dur="1.8s" begin="0s" repeatCount="1" fill="freeze"/>
-                    <animateMotion dur="1.8s" begin="0s" repeatCount="1" fill="freeze"
-                        path="M 30.6,17.5 L 66.3,17.5 L 40.8,46"
-                        calcMode="spline" keyTimes="0;0.48;1" keySplines="0.42 0 0.58 1;0.42 0 0.58 1"/>
-                </path>
-
-                <!-- estrela 4 pontas percorrendo o 9 -->
-                <path d="M 0,-4 L 0.65,-0.65 L 4,0 L 0.65,0.65 L 0,4 L -0.65,0.65 L -4,0 L -0.65,-0.65 Z"
-                      fill="white" filter="url(#star-glow)" opacity="0">
-                    <animate attributeName="opacity" values="0;1;1;0" keyTimes="0;0.04;0.94;1"
-                        dur="1.8s" begin="0s" repeatCount="1" fill="freeze"/>
-                    <animateTransform attributeName="transform" type="rotate"
-                        from="0" to="360"
-                        dur="1.8s" begin="0s" repeatCount="1" fill="freeze"/>
-                    <animateMotion dur="1.8s" begin="0s" repeatCount="1" fill="freeze"
-                        path="M 112.8,17.5 A 15.5,6.4 0 1 0 128.3,23.9 L 106,46"
-                        calcMode="spline" keyTimes="0;0.62;1" keySplines="0.25 0 0.75 1;0.42 0 0.58 1"/>
-                </path>
+                <text x="113" y="46" style="font-family: 'Zen Dots', cursive;" font-size="44" fill="#00E5E5" text-anchor="middle">9</text>
             </svg>
             <p class="logo-tagline">IT &amp; Automation</p>
         </div>
