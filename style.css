@@ -45,6 +45,10 @@
             gap: 3px;
         }
 
+        .logo-link {
+            text-decoration: none;
+        }
+
         .logo-tagline {
             font-size: 0.6rem;
             font-weight: 500;
